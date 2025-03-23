@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Car } from "../Context";
 
-const SingleProduct = ({ p, cart, setCart }) => {
+const SingleProduct = ({p}) => {
+  const { cart, setCart } = useContext(Car);
   return (
     <div className="flex items-center justify-between p-4 border-b bg-white shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg">
       <img

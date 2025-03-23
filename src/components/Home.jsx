@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { faker } from "@faker-js/faker";
 import SingleProduct from "./SingleProduct.jsx";
 
+
 faker.seed(123);
 
-const Home = ({ cart, setCart }) => {
+const Home = () => {
+  
   const products = [...Array(10)].map(() => ({
     id: faker.string.uuid(), // Fixed UUID generation
     name: faker.commerce.productName(),
@@ -18,7 +20,7 @@ const Home = ({ cart, setCart }) => {
   return (
     <div>
       {pro.map((p) => (
-       <SingleProduct key={p.id} p={p} cart={cart} setCart={setCart} />
+       <SingleProduct key={p.id} p={p}  />
       ))}
     </div>
   );
